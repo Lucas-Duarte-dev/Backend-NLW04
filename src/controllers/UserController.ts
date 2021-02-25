@@ -1,12 +1,12 @@
 import { Request, Response } from 'express';
-import { getRepository } from 'typeorm';
-import { User } from '../model/User';
+import { getCustomRepository } from 'typeorm';
+import { UserRepository } from '../repositories/UserRepository';
 
 class UserController {
     async store(request: Request, response: Response) {
         const { name, email } = request.body;
 
-        const repository = getRepository(User);
+        const repository = getCustomRepository(UserRepository);
 
         const user = repository.create({ name, email });
 
@@ -18,7 +18,7 @@ class UserController {
 
         await repository.save(user);
 
-        response.json(user)
+        response.status(201).json(user)
     }
 }
 

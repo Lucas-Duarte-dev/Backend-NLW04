@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from 'typeorm';
 import { v4 as uuid } from 'uuid'
 
-@Entity()
+@Entity('users')
 export class User {
 
     @PrimaryGeneratedColumn('uuid')

@@ -8,7 +8,7 @@ const routes = Router();
 const userController = new UserController();
 const surveyController = new SurveyController();
 
-routes.post('/user', userController.store)
+routes.post('/users', userController.store)
 routes.post('/surveys', surveyController.store)
 routes.get('/surveys', surveyController.index)
 

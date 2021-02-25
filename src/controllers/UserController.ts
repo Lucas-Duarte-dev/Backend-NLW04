@@ -13,12 +13,12 @@ class UserController {
         const userAlreadyExists = await repository.findOne({ email });
 
         if(userAlreadyExists) {
-            response.status(400).json({ message: "User already exists." });
+            return response.status(400).json({ message: "User already exists." });
         }
 
         await repository.save(user);
 
-        response.status(201).json(user)
+        return response.status(201).json(user)
     }
 }
 

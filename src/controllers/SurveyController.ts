@@ -20,7 +20,7 @@ class SurveyController {
 
         const survey = await repository.find();
 
-        response.status(200).json(survey);
+        return response.status(200).json(survey);
     }
 }
 
